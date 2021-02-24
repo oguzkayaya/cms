@@ -21,7 +21,7 @@
                        <div class="slider-text">
                             <h1 class="wow cssanimation fadeInTop" data-wow-delay="1s" data-wow-duration="800ms">{{$value['baslik']}}</h1>
                             <p class="wow cssanimation fadeInBottom" data-wow-delay="1s">{{$value['icerik']}}</p>
-                            <a href="{{asset(\App\Helper\mHelper::largeImage($value['image']))}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Resime git</a>
+                            <a href="{{route('site.offer.index')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Teklif Al</a>
                         </div>
                    </div>
                 </div>
@@ -34,14 +34,14 @@
 <section class="services-section bg-grey bd-bottom padding">
     <div class="container">
        <div class="section-heading text-center mb-40">
-            <h4>Hizmetlerimiz</h4>
-            <h2>Neler yapıyoruz?</h2>
+            <h4>Kategoriler</h4>
+            <h2>Neler yazıyoruz?</h2>
         </div>
         <div class="row service-wrap">
             @foreach ($services as $key => $value)
             <div class="col-md-4 col-sm-6 xs-padding">
                 <div class="service-box">
-                    <div class="icon"><i class="{{$value['icon']}}"></i></div>
+                    <div class="icon"><img src="{{asset(\App\Helper\mHelper::largeImage($value['icon']))}}" alt="vue-nedir"></div>
                     <div class="service-content">
                         <h3>{{$value['name']}}</h3>
                         <p>{{$value['aciklama']}}</p>
@@ -77,27 +77,31 @@
         </div>
     </section><!-- Blog Section -->
 
+
 <section class="pricing-section bg-grey bd-bottom padding">
     <div class="container">
         <div class="section-heading mb-40 text-center">
            <h2>Ürünler</h2>
         </div>
         <div class="row pricing-wrap">
+            @foreach (\App\Urunler::orderBy('id','asc')->get() as $key => $value)
             <div class="col-md-4 col-sm-6 xs-padding">
                 <div class="pricing-box text-center">
                     <div class="pricing-head">
-                        @foreach (\App\Urunler::orderBy('id','asc')->get() as $key => $value)
+                       
                         <img src="{{asset(\App\Helper\mHelper::largeImage($value['image']))}}" alt="img">
                         <span>{{$value['baslik']}}</span>
                         <h2>{{$value['fiyat']}} ₺</h2>
-                        @endforeach
+                        
                     </div>
                     <p>{!!\App\Helper\mHelper::split($value['aciklama'],200)!!}</p>
                     <div class="pricing-footer">
                         <a href="{{route('site.urunler.view',['link'=>$value['link']])}}" class="default-btn">Başlayın</a>
                     </div>
                 </div>
-            </div><!-- Pricing 1 -->
+            </div><!-- Pricing  -->
+            
+            @endforeach
         </div>
     </div>
 </section><!-- Pricing Section -->
@@ -142,7 +146,7 @@
     </div>
     <div class="request-bg"></div>
 </section><!-- Request Section -->
-
+<!--
 <div class="sponsor-section bd-bottom">
     <div class="container">
         <ul id="sponsor-carousel" class="sponsor-items owl-carousel">
@@ -153,7 +157,7 @@
             @endforeach
         </ul>
     </div>
-</div><!-- ./Sponsor Section -->
+</div> -->
 @endsection
 @section('footer')
     @if(session("swal"))

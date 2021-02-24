@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @yield('seo')
 		<!--<meta name="description" content="">
-        <title>THE ADAM</title>-->
+        <title>Badem</title>-->
 
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
@@ -41,14 +41,9 @@
         
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
         <div class="site-preloader-wrap">
             <div class="spinner"></div>
         </div><!-- Preloader -->
-
         <header id="header" class="header-section">
             <div class="top-header">
                 <div class="container">
@@ -80,7 +75,7 @@
                         <div class="col-md-4 d-none d-md-block">
                             <ul class="right-info">
                                 <li><a href="{{url('/register')}}">Kayıt ol</a></li>
-                                <li><a href="{{route('login')}}">Giriş yap</a></li>
+                                <li><a href="{{url('/login')}}">Giriş yap</a></li>
                             </ul>
                         </div>
                         @endguest
@@ -92,14 +87,14 @@
                     <div class="bottom-content-wrap row">
                         <div class="col-md-3">
                             <div class="site-branding">
-                                <a href="{{route('site.index')}}"><img src="{{asset('site/img/theadam.png')}}" alt="Brand"></a>
+                                <a href="{{route('site.index')}}"><img src="{{asset('site/img/badem.png')}}" alt="Brand"></a>
                             </div>
                         </div>
                        <div class="col-md-9 d-none d-md-block text-right">
                            <ul id="mainmenu" class="nav navbar-nav nav-menu">
                                 <li class="active"><a href="{{route('site.index')}}">Anasayfa</li>
                                 
-                                <li><a href="#">Hizmetlerimiz</a>
+                                <li><a href="#">Kategoriler</a>
                                     <ul>
                                     @foreach (\App\Services::where('gorunum',1)->orderBy('id','asc')->get() as $key=>$value)
                                        <li><a href="{{route('site.services.index',['link'=>$value['link']])}}">{{$value['name']}}</a></li>
@@ -168,7 +163,7 @@
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 sm-padding">
                             <div class="widget-content">
-                                <h3>Hizmetlerimiz</h3>
+                                <h3>Kategoriler</h3>
                                 @foreach (\App\Services::orderBy('created_at','desc')->get() as $key => $value)
                                 <ul class="widget-link">
                                     <li><a href="{{route('site.services.index',['link'=>$value['link']])}}">{{$value['name']}}</a></li>
@@ -191,7 +186,7 @@
 			<div class="container">
                 <div class="row">
                     <div class="col-md-6 sm-padding">
-                        <div class="copyright">&copy; THE ADAM 2019 <a href="https://www.theadam.com.tr/">Web Tasarım</a>Copyright All Rights Reserved</div>
+                        <div class="copyright">&copy; Copyright All Rights Reserved</div>
                     </div>
                 </div>
 			</div>

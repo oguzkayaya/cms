@@ -30,7 +30,7 @@
                                         <td>{{$value['baslik']}}</td>
                                         <td>{{$value['aciklama']}}</td>
                                         <td>{{$value['anahtar_kelime']}}</td>
-                                        <td>{{$value['icerik']}}</td>
+                                        <!--<td>{{$value['icerik']}}</td>-->
                                         <td><a href="{{route('admin.sayfa.edit',['id'=>$value['id']])}}">Düzenle</td>                                   
                                         <td><a href="{{route('admin.sayfa.delete',['id'=>$value['id']])}}">Sil</td>
                                         

@@ -32,8 +32,8 @@
                                     <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label >Anasayfa Icon</label><br>
-                                                    <input  type="text" name="icon">
+                                                    <label >Anasayfa Icon (30x30)</label><br>
+                                                    <input  type="file" name="icon">
                                                 </div>                                         
                                             </div>
                                     </div>     

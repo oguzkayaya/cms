@@ -85,13 +85,7 @@
                                                     </select>
                                                 </div>                                         
                                             </div>
-                                    </div>
-                                    
-                                    
-                                     
-                                                              
-                                        
-                                       
+                                    </div> 
                                         <button type="submit" class="btn btn-primary">Düzenle</button>
                                     </form>
                                 </div>

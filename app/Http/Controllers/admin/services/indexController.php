@@ -22,6 +22,7 @@ class indexController extends Controller
     {
         $all = $request->except('_token');
         $all['image'] = imageUpload::singleUpload(rand(1,19000),"services",$request->file('image'));
+        $all['icon'] = imageUpload::singleUpload(rand(1,19000),"services-icon",$request->file('icon'));
         $insert = Services::create($all);
         if ($insert) {
             return redirect()->back()->with('status','Başarıyla eklendi.');

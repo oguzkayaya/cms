@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(['namespace' => 'site','as'=>'site.'], function () {
@@ -46,7 +47,7 @@ Route::group(['namespace' => 'site','as'=>'site.'], function () {
     
 });
 
-Route::group(['namespace' => 'admin','prefix' => 'admin','as'=>'admin.','middleware'=>['auth','AdminCtrl']], function () {
+Route::group(['namespace' => 'admin','prefix' => 'admin','as'=>'admin.'], function () {
     Route::get('/','indexController@index')->name('index');
     Route::group(['namespace' => 'slider', 'prefix'=>'slider','as'=>'slider.'], function () {
         Route::get('/','indexController@index')->name('index');

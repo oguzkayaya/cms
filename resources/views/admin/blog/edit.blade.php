@@ -4,10 +4,10 @@
                     <div class="row gap-20 masonry pos-r">
                         <div class="masonry-sizer col-md-6"></div>
                         <div class="masonry-item col-md-12">
+                            <a href="{{route('site.sayfa.index',['link'=>$data[0]['link']])}}">
+                                <button  class="btn btn-primary">Blog sayfasına git</button></a>
                             <div class="bgc-white p-20 bd">
                                 <h4 class="c-grey-900 mB-20">Blog Düzenle</h4>
-                                <a href="{{route('site.sayfa.index',['link'=>$data[0]['link']])}}">
-                                <button  class="btn btn-primary">Blog sayfasına git</button></a>
                                 @if(session("status"))
                                     <div class="alert alert-primary">{{session("status")}}</div>
                                 @endif

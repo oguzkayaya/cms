@@ -30,7 +30,7 @@
                                         <td>{{$value['baslik']}}</td>
                                         <td>{{$value['aciklama']}}</td>
                                         <td>{{$value['anahtar_kelime']}}</td>
-                                        <td>{{$value['icerik']}}</td>
+                                        <!--<td>{{$value['icerik']}}</td>-->
                                         <td><a href="{{route('admin.blog.edit',['id'=>$value['id']])}}">Düzenle</td>                                   
                                         <td><a href="{{route('admin.blog.delete',['id'=>$value['id']])}}">Sil</td>
                                         
