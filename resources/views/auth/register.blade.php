@@ -79,7 +79,7 @@
         </div>
         <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
             <h4 class="fw-300 c-grey-900 mB-40">Kayıt Ol</h4>
-            <form action="/register"  method="POST">
+            <form action="{{ route('register') }}"  method="POST">
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
